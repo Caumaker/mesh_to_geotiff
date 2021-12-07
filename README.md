@@ -101,7 +101,7 @@ Benchmarks are after this has happened once.
 **Test surface:**
  - Points: 194,114
  - Facets: 384,874
- - Surface area: 728,550m² (Bounding: approx 1,240m x 950m)
+ - Surface area: 728,550m² (Bounding: approx 1,240m x 970m)
  - CPU: AMD Ryzen 5 3600; RAM: 64gb
  
 ![Initial surface](/img/initial_suface.png "The initial surface")
