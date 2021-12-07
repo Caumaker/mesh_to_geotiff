@@ -97,7 +97,8 @@ print(valid_xyzs)
 # Benchmarks
 **Note:** Upon the first run, Numba must compile/cache. This can add 15~ seconds to the first-time run that will disappear after that.
 Benchmarks are after this has happened once.
-Test surface:
+
+**Test surface:**
  - Points: 194,114
  - Facets: 384,874
  - Surface area: 728,550m² (Bounding: approx 1,240m x 950m)
@@ -105,6 +106,7 @@ Test surface:
  
 ![Initial surface](/img/initial_suface.png "The initial surface")
 
+The output DEM looks like this:
 ![DEM tif output](/img/dem.png "The DEM tif output (looks the same at this zoom level regardless of density)")
 
 **Gridding to 1m:**
