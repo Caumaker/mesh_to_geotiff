@@ -7,7 +7,7 @@ Python class for converting (very fast) 3D Meshes/Surfaces to Raster DEMs (as Ge
 
 ![Example of output](/img/example.jpg "Example of output, combining multiple meshes")
 
-**Motivation**
+## Motivation
 I worked on a project that used polygonal meshes and wanted to integrate parts that relied on raster computations.
 There was a need to shift between the two paradigms without having to wait too long for conversion.
 
@@ -20,8 +20,8 @@ The benchmarks below indicate speeds expected on an average PC (at least for 3D 
 ### With `pip`
 **Requires rasterio (which also needs gdal). These libraries are easier installed from pre-compiled wheels.**
 
-You will need [Link rasterio](https://github.com/rasterio/rasterio) and [Link gdal](https://github.com/OSGeo/gdal).
-The easiest way to install gdal will be a pre-compiled versions for your platform from:
+You will need [rasterio](https://github.com/rasterio/rasterio) and [gdal](https://github.com/OSGeo/gdal).
+The easiest way to install these will be a pre-compiled versions for your platform from:
  - Gdal: https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal
  - Rasterio: https://www.lfd.uci.edu/~gohlke/pythonlibs/#rasterio
  - Install the gdal wheel first, then rastio wheel, as shown below
@@ -48,6 +48,10 @@ With those satisfied it should be fine to pip install this:
 ```
 python -m pip install git+https://github.com/jeremybutlermaptek/mesh_to_geotiff
 ```
+or
+```
+python -m pip install https://github.com/jeremybutlermaptek/mesh_to_geotiff/raw/main/dist/mesh_to_geotiff-0.1.0-py3-none-any.whl
+```
 
 **When running examples, if you see this error:**
 ValueError: numpy.ndarray size changed, may indicate binary incompatibility. Expected 88 from C header, got 80 from PyObject
@@ -67,7 +71,7 @@ See examples:
  - [Trimesh](/examples/trimesh_example.py)
  - [Maptek PointStudio](/examples/maptek_pointstudio_example.py)
 
-```
+```python
 from mesh_to_geotiff import MeshObject, MeshToGeotiff
 import trimesh
 mesh = trimesh.load_mesh("input_mesh.obj", "obj")
