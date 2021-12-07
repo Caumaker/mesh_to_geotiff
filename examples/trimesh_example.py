@@ -68,4 +68,4 @@ if __name__ == "__main__":
 # Writing rasters: w=181 h=178 total pixels=32218
 # Wrote height raster to: data\simple_mesh_heightmap.tif
 # Writing height raster took: 0.011513948440551758s
-# Saved DEM to: f:\Dropbox\Dev\mesh_to_geotiff\data\simple_mesh_heightmap.tif
+# Saved DEM to: data\simple_mesh_heightmap.tif
