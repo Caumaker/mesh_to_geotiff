@@ -102,12 +102,17 @@ Benchmarks are after this has happened once.
  - Points: 194,114
  - Facets: 384,874
  - Surface area: 728,550m² (Bounding: approx 1,240m x 970m)
- - CPU: AMD Ryzen 5 3600; RAM: 64gb
  
 ![Initial surface](/img/initial_suface.png "The initial surface")
 
 The output DEM looks like this:
 ![DEM tif output](/img/dem.png "The DEM tif output (looks the same at this zoom level regardless of density)")
+
+**Benchmark PC:**
+ - CPU: AMD Ryzen 5 3600
+ - RAM: 64gb
+ - GPU: GTX1060
+ - OS: Windows 10 x64
 
 **Gridding to 1m:**
  - Total time to grid: 0.82sec
