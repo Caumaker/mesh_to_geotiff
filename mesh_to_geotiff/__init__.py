@@ -109,7 +109,7 @@ class MeshToGeotiff():
         
             Returns
             ---
-            Results are stored in properties: grid_points, grid_colours, grid_valid_results, grid_rows, grid_columns
+            Results are stored in properties: grid_points, grid_colours, null_mask, grid_rows, grid_columns
         """
         self.log.debug("Begin gridding algorithm")
         start_time = time.time()
@@ -361,7 +361,7 @@ class MeshToGeotiff():
         return result
 
     def save_geotiff(self, save_path_height_map:str, save_path_rgba_map:str=None, coord_sys:CRS=None):
-        """Converts a facet network into a rasterised geotiff.
+        """Converts computed grid into a rasterised geotiff.
 
         NOTE: Requires compute_grid to be run first.
         
@@ -383,7 +383,7 @@ class MeshToGeotiff():
 
         Raises:
         -------
-        ValueError: if compute_grid() has not yet been run
+            ValueError: if compute_grid() has not yet been run
         """
         if not isinstance(self.grid_points, np.ndarray):
             raise ValueError("Must run compute_grid() to generate data to export Geotiff before running save_geotiff()")
