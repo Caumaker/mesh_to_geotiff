@@ -1,7 +1,8 @@
 """ MeshToGeotiff - A fast Python algorithm to convert a 3D mesh into a geotiff
 
-    Takes a selection of surfaces from one of the below applications and
-    converts them into (a) a regular grid point cloud, and (b) a geotiff DEM
+    Takes a selection of surfaces (one or multiple) and converts them into
+    (a) a regular grid point cloud, and 
+    (b) a geotiff DEM
 
     Date: 02-Jun-2021
     Author: Jeremy Butler
@@ -26,7 +27,7 @@ class MeshObject:
     
     Properties:
     points (np.ndarray): Array of 3D points N*3 (x,y,z), np.float64
-    point_colours (np.ndarray): Array of RGBA matching the points (may be empty) N*4 (r,g,b,a), np.int64
+    point_colours (np.ndarray): Array of RGBA matching the points (may be empty) N*4 (r,g,b,a), np.uint8
     points (np.ndarray): Array of indices for mesh/surface N*3 (i1,i2,i3), np.uint32
     """
     points: np.ndarray = np.empty((0,3),dtype=np.float64)
@@ -81,9 +82,7 @@ class MeshToGeotiff():
             self.log_level=logging.INFO  
         log_format = logging.Formatter('%(message)s')
         self.log = logging.getLogger(__name__)                                  
-        self.log.setLevel(self.log_level)                                       
-
-        # writing to stdout                                                     
+        self.log.setLevel(self.log_level)                                                                                           
         handler = logging.StreamHandler(sys.stdout)                             
         handler.setLevel(self.log_level)                                        
         handler.setFormatter(log_format)                                        
@@ -122,7 +121,7 @@ class MeshToGeotiff():
             combination_strategy = 'first'
         combination_id = combinations[combination_strategy]
         temp_time = time.time()
-        # Calculate corner origins and
+        # Calculate corner origins, rows, columns
         lowerX, lowerY = np.min(surface.points[:,0]), np.min(surface.points[:,1])
         upperX, upperY = np.max(surface.points[:,0]), np.max(surface.points[:,1])
         zmin, zmax = np.min(surface.points[:,2])-self.eps, np.max(surface.points[:,2])+self.eps
